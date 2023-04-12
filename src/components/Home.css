@@ -1,0 +1,35 @@
+.root {
+    display: flex;
+  }
+  
+  .appBar {
+    z-index: 1201; /* increase z-index to overlap with the drawer */
+  }
+  
+  .menuButton {
+    margin-right: 36px;
+  }
+  
+  .drawer {
+    width: 240px;
+    flex-shrink: 0;
+  }
+  
+  .drawerPaper {
+    width: 240px;
+  }
+  .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  .content {
+    flexGrow: 1;
+    padding: 24px;
+  }
+  
+  .addDashboardDialogTextField {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  

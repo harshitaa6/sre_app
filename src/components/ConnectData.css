@@ -1,0 +1,15 @@
+.card-icon {
+    background-image: url('D:/SRE_DASHBOARD/sre_app/public/excel.png');
+    /* image: url("D:/SRE_DASHBOARD/sre_app/public/login.jpg"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80px;
+  width: 80px;
+  background-color: transparent;
+  }
+  .body {
+    background-color: #F1F8FF;
+    height: 100vh;
+  overflow-y: auto;
+    
+  }

@@ -1,0 +1,363 @@
+[
+    {
+        "id": "failed request",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "P1D",
+                "segments": []
+            }
+        }
+    },
+    {
+        "id": "Server Request ",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "requests/count": {
+                            "sum": 14
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "requests/count": {
+                            "sum": 36
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Latency/server response time",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "requests/duration": {
+                            "avg": 64.18
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "requests/duration": {
+                            "avg": 29.53
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Browser Page Load Timing",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "browserTimings/totalDuration": {
+                            "avg": 7531
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "browserTimings/totalDuration": {
+                            "avg": 2403.67
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Exception Count",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": []
+            }
+        }
+    },
+    {
+        "id": "I/O Rates",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "performanceCounters/processIOBytesPerSecond": {
+                            "avg": 2088.47
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "performanceCounters/processIOBytesPerSecond": {
+                            "avg": 936.55
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T07:00:00.000Z",
+                        "end": "2023-04-07T08:00:00.000Z",
+                        "performanceCounters/processIOBytesPerSecond": {
+                            "avg": 1132
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Dependices Call Failure",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": []
+            }
+        }
+    },
+    {
+        "id": "Server Exceptions Count",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": []
+            }
+        }
+    },
+    {
+        "id": "Usage Metrices /Page View Load Time",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "pageViews/duration": {
+                            "avg": 7531
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "pageViews/duration": {
+                            "avg": 2403.67
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Usage Metrices /Page Views",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "pageViews/count": {
+                            "sum": 1
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "pageViews/count": {
+                            "sum": 6
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Usage Metrices /Session Count",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "sessions/count": {
+                            "unique": 1
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "sessions/count": {
+                            "unique": 3
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Usage Metrices /User Count",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "users/count": {
+                            "unique": 1
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "users/count": {
+                            "unique": 3
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Processor /Process I/O Rates",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.571Z",
+                "end": "2023-04-10T09:43:27.571Z",
+                "interval": "PT1H",
+                "segments": [
+                    {
+                        "start": "2023-04-07T05:00:00.000Z",
+                        "end": "2023-04-07T06:00:00.000Z",
+                        "performanceCounters/processIOBytesPerSecond": {
+                            "avg": 2088.47
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T06:00:00.000Z",
+                        "end": "2023-04-07T07:00:00.000Z",
+                        "performanceCounters/processIOBytesPerSecond": {
+                            "avg": 936.55
+                        }
+                    },
+                    {
+                        "start": "2023-04-07T07:00:00.000Z",
+                        "end": "2023-04-07T08:00:00.000Z",
+                        "performanceCounters/processIOBytesPerSecond": {
+                            "avg": 1132
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "Availaibility",
+        "status": 400,
+        "body": {
+            "error": {
+                "message": "The request had some invalid properties",
+                "code": "BadArgumentError",
+                "correlationId": "25eb2a28-345f-45ce-b52e-e0727bf2a653",
+                "innererror": {
+                    "code": "QueryValidationError",
+                    "message": "Failed parsing the query",
+                    "details": [
+                        {
+                            "code": "BadArgumentError",
+                            "target": "granularity",
+                            "message": "Failed parsing 'P1H' as ISO8601 duration"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "Availaibility Duration",
+        "status": 400,
+        "body": {
+            "error": {
+                "message": "The request had some invalid properties",
+                "code": "BadArgumentError",
+                "correlationId": "25eb2a28-345f-45ce-b52e-e0727bf2a653",
+                "innererror": {
+                    "code": "QueryValidationError",
+                    "message": "Failed parsing the query",
+                    "details": [
+                        {
+                            "code": "BadArgumentError",
+                            "target": "granularity",
+                            "message": "Failed parsing 'P1H' as ISO8601 duration"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "id": "Availaibility Counts",
+        "status": 200,
+        "body": {
+            "value": {
+                "start": "2023-03-11T09:43:27.572Z",
+                "end": "2023-04-10T09:43:27.572Z",
+                "interval": "P1D",
+                "segments": []
+            }
+        }
+    }
+]
