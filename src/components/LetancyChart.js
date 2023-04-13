@@ -40,8 +40,6 @@ const Latency = () => {
     fetchChartData();
   }, []);
 
-  const labels = ["January", "February", "March", "April", "May", "June"];
-
   // Update the data prop to display only the recent 10 values
   const data = {
     labels: chartData.xLabels.slice(-10), // Display only the last 10 labels

@@ -2,8 +2,6 @@ import "./App.css";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import Home from "./components/Home";
-import Dashboard1 from "./components/Dashboard1";
-import Dashboard2 from "./components/Dashboard2";
 import ConnectData from "./components/ConnectData";
 import FailedReq from "./components/FailedReqChart";
 import Letancy from "./components/LetancyChart";
