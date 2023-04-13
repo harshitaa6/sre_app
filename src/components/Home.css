@@ -43,14 +43,16 @@
     background-image: url("D:/SRE_DASHBOARD/sre_app/public/home9.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    width: 350px;
+    object-fit: cover;
+    inline-size: 100%;
+    background-position: absolute;
+    width: 500px;
     height: 450px;
     flex: 1;
-    margin-left: 50px;
-    margin-top: 70px;
+    /* margin-left: 50px; */
+    /* margin-top: 70px; */
     border-radius: 2%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     /* box-shadow: 5px 3px #242324; */
    
   }

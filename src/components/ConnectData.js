@@ -48,11 +48,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flex: 1,
+    flex: 0.1,
     marginTop: theme.spacing(2),
     borderRadius: "5px",
     border: "4",
-    height: "50px",
+    height: "10px",
     fontWeight: "bold",
     boxShadow: "0px 2px 4px -1px rgba(0,0,0,0.2)",
     "&:hover": {
@@ -87,6 +87,9 @@ export default function ConnectData() {
   return (
     <div className="body">
       <div className={classes.header}>
+        <Link href="/Home">
+          <ArrowBackIcon style={{ color: "white", marginRight: "10px" }} />
+        </Link>
         <Typography align="left" variant="h6" className={classes.title}>
           SRE Dashboard
         </Typography>
@@ -104,13 +107,15 @@ export default function ConnectData() {
           }}
         >
           Connect to App{" "}
-          <ArrowForwardIcon
+          {/* <ArrowForwardIcon
             style={{ verticalAlign: "middle", marginBottom: "0.2em" }}
-          />
+          /> */}
         </h2>
       </div>
+
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div className="data-background-image"></div>
+        {/* <div style={{ display: "grid", marginRight: "30vw" }}> */}
         <div
           style={{
             display: "flex",
@@ -120,7 +125,10 @@ export default function ConnectData() {
             alignItems: "center",
             alignContent: "center",
             width: "50vw",
-            marginBottom: "70%",
+            border: "1px solid black",
+            borderRadius: "10px",
+            boxShadow: "0px 10px 14px -1px rgba(0,0,0,0.2)",
+            // marginBottom: "70%",
           }}
         >
           <TextField
@@ -128,11 +136,12 @@ export default function ConnectData() {
             variant="outlined"
             style={{
               width: "70%",
-              marginTop: "80px",
+              marginTop: "20px",
             }}
             value={apiKey}
             onChange={handleApiKeyChange}
           />
+
           <Button
             variant="contained"
             href="/home"
@@ -142,6 +151,7 @@ export default function ConnectData() {
           >
             Connect to Dashboard
           </Button>
+          {/* </div> */}
         </div>
       </div>
     </div>

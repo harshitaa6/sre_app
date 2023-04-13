@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     marginRight: theme.spacing(1), // Add some spacing between logo/icon and title
+    color: "white",
   },
   title: {
     flexGrow: 1,
@@ -85,21 +86,23 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     width: 240,
-    flexShrink: 0,
+    // flexShrink: 0,
     alignContent: "left",
   },
   drawerPaper: {
     width: 240,
-    backgroundColor: "#F0F8FF",
-    alignContent: "left",
+    background: "hsl(0, 0%, 100%, 0.1)",
+    backdropFilter: "blur(0.6rem)", // alignContent: "left",
   },
 
   bottomButton: {
-    margin: theme.spacing(2),
+    margin: theme.spacing(1.5),
     textAlign: "left",
+    paddingLeft: "0",
+    width: "60%",
   },
   alignLeft: {
-    alignItems: "flex-start",
+    // alignItems: "flex-start",
   },
 }));
 
@@ -132,22 +135,24 @@ function HomePage() {
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            // justifyContent: "start",
+            justifyItems: "flex-start",
           }}
         >
           {" "}
           {/* Add className to align text */}
-          <Typography variant="h5" align="center">
-            DASHBOARDS
-          </Typography>
-          {/* Logout */}
-          <Button
-            className={classes.bottomButton}
-            startIcon={<ExitToAppIcon />}
-            fullWidth
+          <Typography
+            variant="h5"
+            align="center"
+            style={{
+              marginTop: "10px",
+              marginBottom: "10px",
+              color: "#1134A6",
+              fontWeight: "10%",
+            }}
           >
-            Logout
-          </Button>
+            {/* DASHBOARDS */}
+          </Typography>
           {/* Profile */}
           <Button
             className={classes.bottomButton}
@@ -163,6 +168,14 @@ function HomePage() {
             fullWidth
           >
             Settings
+          </Button>
+          {/* Logout */}
+          <Button
+            className={classes.bottomButton}
+            startIcon={<ExitToAppIcon />}
+            fullWidth
+          >
+            Logout
           </Button>
         </div>
 
