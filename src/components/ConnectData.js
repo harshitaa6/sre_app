@@ -1,48 +1,12 @@
 import React, { useRef, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { CardMedia, Typography } from "@material-ui/core";
-import {
-  Avatar,
-  TextField,
-  Link,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Drawer,
-} from "@material-ui/core";
+import { Button, CardMedia, Typography } from "@material-ui/core";
+import { Avatar, TextField, Link } from "@material-ui/core";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import SearchIcon from "@material-ui/icons/Search";
-import { Grid, Card, CardContent } from "@material-ui/core";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import HomePage from "./Home";
-const cards = [
-  {
-    title: "Card 1",
-    description: "APP1",
-    logo: "documents.png",
-    type: "application/vnd.ms-excel",
-  },
-  {
-    title: "Card 2",
-    description: "APP2",
-    logo: "documents.png",
-    type: "application/sql",
-  },
-  { title: "Card 3", description: "APP3", logo: "documents.png" },
-  { title: "Card 4", description: "SQL", logo: "sql-server.png" },
-];
-const drawerWidth = 350;
-const app1 = require("D:/SRE_DASHBOARD/sre_app/src/components/app1.json");
-const app2 = require("D:/SRE_DASHBOARD/sre_app/src/components/app2.json");
-const app3 = require("D:/SRE_DASHBOARD/sre_app/src/components/app3.json");
-const apps = [app1, app2, app3];
-apps.forEach((app, index) => {
-  const key = `app${index + 1}`;
-  localStorage.setItem(key, JSON.stringify(app));
-});
+
+import "./ConnectData.css";
 const useStyles = makeStyles((theme) => ({
   fileInput: {
     display: "none",
@@ -56,61 +20,46 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     padding: theme.spacing(0, 2),
-    background: theme.palette.primary.main,
+    background: "#002D62",
     color: theme.palette.common.white,
     position: "fixed",
     top: 0,
-    width: "97%",
+    width: "98%", // Update width to 100% to cover the entire viewport
     height: "55px",
-    background: "#002D62",
     zIndex: theme.zIndex.drawer + 1,
   },
-  h1: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: theme.spacing(2, 2),
-    background: theme.palette.primary.main,
-    color: theme.palette.common.white,
-    position: "fixed",
-    top: -30,
-    width: "97%",
-    height: "44px",
-    background: "#002D62",
-    zIndex: theme.zIndex.drawer + 1,
-    paddingTop: "10px",
-    paddingBottom: "15px",
+  logo: {
+    marginRight: theme.spacing(1), // Add some spacing between logo/icon and title
+  },
+  title: {
+    flexGrow: 1,
+    fontWeight: "bold", // Add bold font weight to title
+  },
+  avatar: {
+    marginLeft: theme.spacing(1), // Add some spacing between title and avatar
+    background: "#1976D2", // Update avatar background color
   },
 
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-    backgroundColor: "#F5F5F5",
-    paddingTop: theme.spacing(4),
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
-  listItem: {
-    marginTop: "15px",
-    borderRadius: theme.spacing(10),
-    margin: theme.spacing(1, 1),
-    backgroundColor: "#FFFFFF",
-    padding: theme.spacing(3),
+  button: {
+    backgroundColor: "#EE9949",
+
+    color: "#5f3d1d",
+    // backgroundColor: "#ffd330",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+    marginTop: theme.spacing(2),
+    borderRadius: "5px",
+    border: "4",
+    height: "50px",
+    fontWeight: "bold",
+    boxShadow: "0px 2px 4px -1px rgba(0,0,0,0.2)",
     "&:hover": {
-      backgroundColor: "#E0E0E0",
+      backgroundColor: "#be7a3a",
     },
   },
-  listItemIcon: {
-    minWidth: theme.spacing(4),
-  },
-  listItemText: {
-    color: "#00308F",
-  },
+
   body: {
     overflow: "hidden",
   },
@@ -122,127 +71,29 @@ const useStyles = makeStyles((theme) => ({
 export default function ConnectData() {
   const avatarStyle = { backgroundColor: "Black" };
   const classes = useStyles();
-  const [isOpen, setIsOpen] = useState(false);
+  const [apiKey, setApiKey] = useState("");
 
-  const [query, setQuery] = useState("");
-  const [open, setOpen] = useState(false);
-  const [selectedAppData, setSelectedAppData] = useState(null);
-  const handleCardClick = (card) => {
-    let appData;
-    const selectedDashboardName = localStorage.getItem("selectedDashboardName");
+  const handleApiKeyChange = (event) => {
+    setApiKey(event.target.value);
+  };
 
-    if (card.description === "APP1") {
-      appData = JSON.parse(localStorage.getItem("app1"));
-    } else if (card.description === "APP2") {
-      appData = JSON.parse(localStorage.getItem("app2"));
-    } else if (card.description === "APP3") {
-      appData = JSON.parse(localStorage.getItem("app3"));
+  const handleConnectClick = () => {
+    if (apiKey.trim() !== "") {
+      // Do something with the API key and navigate to the dashboard
+      window.location.href = "/home";
     }
-
-    if (selectedDashboardName) {
-      // Check if selectedDashboardName exists
-      // Send appData to selectedDashboardName
-      // Example: Assuming selectedDashboardName is the key for the selected dashboard
-      localStorage.setItem(selectedDashboardName, JSON.stringify(appData));
-    } else {
-      // If selectedDashboardName does not exist, handle it accordingly
-      console.log("No selected dashboard found. Handle it accordingly.");
-    }
-
-    setOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleQueryChange = (event) => {
-    setQuery(event.target.value);
-  };
-  const drawer = (
-    <div>
-      <List>
-        <div>
-          <h2 className={classes.h1}>App Health Section</h2>
-        </div>
-        {/* <h3>App Health Section</h3> */}
-        <ListItem className={classes.listItem} button>
-          <ListItemIcon className={classes.listItemIcon}>
-            <Link href="/Home">
-              <ArrowBackIosIcon />
-            </Link>
-          </ListItemIcon>
-          <ListItemText
-            className={classes.listItemText}
-            primary="Availability"
-          />
-        </ListItem>
-        <ListItem className={classes.listItem} button>
-          <ListItemIcon className={classes.listItemIcon}>
-            <ArrowBackIosIcon />
-          </ListItemIcon>
-          <ListItemText className={classes.listItemText} primary="Latency" />
-        </ListItem>
-        <ListItem className={classes.listItem} button>
-          <ListItemIcon className={classes.listItemIcon}>
-            <ArrowBackIosIcon />
-          </ListItemIcon>
-          <ListItemText className={classes.listItemText} primary="Throughput" />
-        </ListItem>
-        <ListItem className={classes.listItem} button>
-          <ListItemIcon className={classes.listItemIcon}>
-            <ArrowBackIosIcon />
-          </ListItemIcon>
-          <ListItemText
-            className={classes.listItemText}
-            primary="Error rates"
-          />
-        </ListItem>
-      </List>
-    </div>
-  );
-  const drawer2 = (
-    <div>
-      <List>
-        <div>
-          <h2 className={classes.h1}>Connect to SQl</h2>
-        </div>
-        {/* <h3>App Health Section</h3> */}
-        <ListItem className={classes.listItem} button>
-          <ListItemIcon className={classes.listItemIcon}>
-            <Link href="/Home">
-              <ArrowBackIosIcon />
-            </Link>
-          </ListItemIcon>
-        </ListItem>
-      </List>
-    </div>
-  );
   return (
     <div className="body">
-      <Drawer
-        className={classes.drawer}
-        variant="temporary"
-        anchor="right"
-        open={open}
-        onClose={handleClose}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        {drawer}
-        {cards.map((e, index) => {
-          console.log(e.description);
-        })}
-      </Drawer>
-
       <div className={classes.header}>
-        <Link href="/Home">
-          <ArrowBackIcon style={{ color: "black" }} />
-        </Link>
-
-        <Typography align="left">SRE Dashboard</Typography>
-        <Avatar style={avatarStyle}></Avatar>
+        <Typography align="left" variant="h6" className={classes.title}>
+          SRE Dashboard
+        </Typography>
+        <Avatar className={classes.avatar} style={avatarStyle}>
+          {/* Update avatar to display initials */}
+          <Typography variant="subtitle1">SD</Typography>
+        </Avatar>
       </div>
       <div style={{ width: "100%" }}>
         <h2
@@ -257,81 +108,42 @@ export default function ConnectData() {
             style={{ verticalAlign: "middle", marginBottom: "0.2em" }}
           />
         </h2>
-
-        <TextField
-          label="Search"
-          variant="outlined"
-          value={query}
-          onChange={handleQueryChange}
-          InputProps={{
-            startAdornment: <SearchIcon />,
-            style: { backgroundColor: "#F5F5F5" },
-          }}
-          style={{ width: "99%", marginLeft: "5px", marginRight: "1px" }}
-
-          //cmnt
-        />
       </div>
-      <TextField
-        label="Enter Api key here"
-        variant="outlined"
-        style={{
-          width: "30%",
-          marginLeft: "5px",
-          marginRight: "1px",
-          marginTop: "10px",
-        }}
-      />
-      <main className={classes.content}>
-        <Grid container spacing={7.5}>
-          {cards
-            .filter((card) =>
-              card.description.toLowerCase().includes(query.toLowerCase())
-            )
-            .map((card, index) => (
-              <Grid key={index} item xs={3}>
-                <Card
-                  style={{
-                    marginTop: "30px",
-                    marginRight: "30px",
-                    marginLeft: "30px",
-                  }}
-                  onClick={() => handleCardClick(card)}
-                >
-                  <CardContent
-                    style={{
-                      justifyContent: "center",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src={card.logo}
-                      alt={card.title}
-                      style={{
-                        width: "30%",
-                        height: "60px",
-                        marginBottom: "16px",
-                        marginLeft: "26px",
-                        marginRight: "25px",
-                      }}
-                    />
-                    <Typography
-                      color="textSecondary"
-                      style={{
-                        textAlign: "center",
-                      }}
-                    >
-                      {" "}
-                      {card.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-        </Grid>
-      </main>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div className="data-background-image"></div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "2rem",
+            alignItems: "center",
+            alignContent: "center",
+            width: "50vw",
+            marginBottom: "70%",
+          }}
+        >
+          <TextField
+            label="Enter API key here"
+            variant="outlined"
+            style={{
+              width: "70%",
+              marginTop: "80px",
+            }}
+            value={apiKey}
+            onChange={handleApiKeyChange}
+          />
+          <Button
+            variant="contained"
+            href="/home"
+            className={classes.button}
+            disabled={apiKey.trim() === ""}
+            onClick={handleConnectClick}
+          >
+            Connect to Dashboard
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

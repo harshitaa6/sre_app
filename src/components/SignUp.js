@@ -190,7 +190,11 @@ const Signup = () => {
   };
   return (
     <Grid>
-      <Paper elevation={10} style={paperStyle} className="background-image">
+      <Paper
+        elevation={10}
+        style={paperStyle}
+        className="signup-background-image"
+      >
         <Box style={boxStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
